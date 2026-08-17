@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛸 DroneWatch
+# DroneWatch
 
 ### Real-Time UAV Detection & Multi-Object Tracking with YOLO11
 
@@ -14,26 +14,24 @@
 
 <img src="assets/sample_detection.png" alt="Sample Detection" width="720"/>
 
-*<sub>PLACEHOLDER — eğitim sonrası örnek tespit ekran görüntüsü buraya gelecek</sub>*
-
 </div>
 
 ---
 
-## 📖 Overview
+## Overview
 
-**DroneWatch**, video akışlarında drone/İHA tespiti ve çoklu nesne takibi yapan uçtan uca bir bilgisayarlı görü sistemidir. **YOLO11** mimarisi üzerine özel eğitilmiş bir model ile **ByteTrack** algoritmasını birleştirerek, hızlı ve küçük hedefleri kareler arasında tutarlı bir şekilde takip eder. Sistem ayrıca zaman içindeki tespit yoğunluğunu görselleştiren bir ısı haritası (heatmap) modülü içerir.
+DroneWatch, video akışlarında drone/İHA tespiti ve çoklu nesne takibi yapan uçtan uca bir bilgisayarlı görü sistemidir. YOLO11 mimarisi üzerine özel eğitilmiş bir model ile ByteTrack algoritmasını birleştirerek, hızlı ve küçük hedefleri kareler arasında tutarlı bir şekilde takip eder. Sistem ayrıca zaman içindeki tespit yoğunluğunu görselleştiren bir ısı haritası (heatmap) modülü içerir.
 
-**Temel yetenekler:**
-- 🎯 Özel eğitilmiş YOLO11 tabanlı drone tespiti
-- 🔄 ByteTrack ile karesel kimlik takibi (ID tutarlılığı)
-- 🔥 Tespit yoğunluğu ısı haritası
-- ⚡ Gerçek zamanlı çıkarım (inference) performansı
-- 📊 Kapsamlı değerlendirme metrikleri (precision, recall, mAP)
+Temel yetenekler:
+- Özel eğitilmiş YOLO11 tabanlı drone tespiti
+- ByteTrack ile karesel kimlik takibi (ID tutarlılığı)
+- Tespit yoğunluğu ısı haritası
+- Gerçek zamanlı çıkarım (inference) performansı
+- Kapsamlı değerlendirme metrikleri (precision, recall, mAP)
 
 ---
 
-## 🎬 Demo
+## Demo
 
 <div align="center">
 
@@ -41,48 +39,45 @@
 |:---:|:---:|
 | <img src="assets/tracking_demo.gif" width="380"/> | <img src="assets/heatmap_output.png" width="380"/> |
 
-
 </div>
 
 ---
 
-## 📊 Performance
+## Performance
 
 Model, doğrulama setinde aşağıdaki metriklerle değerlendirilmiştir:
 
 | Metrik | Değer |
 |---|---|
-| **Precision** | `90` |
-| **Recall** | `91` |
-| **mAP@50** | `90` |
-| **mAP@50-95** | `71` |
-| **Inference Hızı** | `14` ms/görüntü |
-| **Model Boyutu** | `45` MB |
+| Precision | 0.90 |
+| Recall | 0.91 |
+| mAP@50 | 0.90 |
+| mAP@50-95 | 0.71 |
+| Inference Hızı | 14 ms/görüntü |
+| Model Boyutu | 45 MB |
 
 <div align="center">
 <img src="assets/results.png" alt="Training Results" width="700"/>
-
-*<sub>PLACEHOLDER — Ultralytics eğitim sonuç grafiği (loss/mAP eğrileri)</sub>*
 </div>
 
 ---
 
-## 🗂️ Dataset
+## Dataset
 
 | Özellik | Detay |
 |---|---|
-| **Kaynak** | [Drones Yolo11 A — Roboflow Universe](https://universe.roboflow.com/drone-a7lpy/drones-yolo11-a) |
-| **Görüntü Sayısı** | 9,900 |
-| **Sınıflar** | `drone`, `bird`, `airplane`, `object` |
-| **Format** | YOLO11 (TXT annotations + `data.yaml`) |
-| **Train/Val Split** | `PLACEHOLDER` |
+| Kaynak | [Drones Yolo11 A — Roboflow Universe](https://universe.roboflow.com/drone-a7lpy/drones-yolo11-a) |
+| Görüntü Sayısı | 9,900 |
+| Sınıflar | drone, bird, airplane, object |
+| Format | YOLO11 (TXT annotations + data.yaml) |
+| Train/Val/Test Split | %70 Train / %20 Val / %10 Test |
 
 ---
 
-## ⚙️ Model Configuration
+## Model Configuration
 
 ```yaml
-model: yolo11n.pt
+model: yolo11s.pt
 epochs: 50
 imgsz: 640
 batch: 16
@@ -92,92 +87,3 @@ patience: 10
 tracker: bytetrack.yaml
 conf_threshold: 0.35
 iou_threshold: 0.5
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-```bash
-Python 3.10+
-CUDA-compatible GPU (opsiyonel, önerilir)
-```
-
-### Installation
-```bash
-git clone https://github.com/KULLANICI_ADINIZ/dronewatch-yolo11.git
-cd dronewatch-yolo11
-pip install -r requirements.txt
-```
-
-**2. Yerel ortamda:**
-```python
-from ultralytics import YOLO
-
-model = YOLO("PLACEHOLDER_best.pt")
-results = model.track(
-    source="your_video.mp4",
-    conf=0.35,
-    iou=0.5,
-    tracker="bytetrack.yaml",
-    save=True
-)
-```
-
----
-
-## 📁 Project Structure
-
-```
-dronewatch-yolo11/
-├── drone_watch.ipynb    
-├── PROJECT_REPORT.md        
-├── requirements.txt          
-├── LICENSE                  
-├── .gitignore
-└── assets/               
-```
-
-## 🧠 Technical Approach
-
-<details>
-<summary><b>Detayları göster</b></summary>
-
-<br>
-
-**Neden YOLO11?**
-`PLACEHOLDER` — mimari seçim gerekçenizi buraya yazın (ör. C3k2 blokları, SPPF, C2PSA dikkat mekanizması küçük/hızlı hedeflerde avantaj sağlıyor).
-
-**Neden ByteTrack?**
-`PLACEHOLDER` — düşük güvenli tespitleri de değerlendirerek ID kaybını azaltması, hesaplama açısından hafif olması.
-
-**Zorluklar ve çözümler:**
-`PLACEHOLDER` — küçük nesne tespiti, hızlı hareket, aydınlatma koşulları gibi karşılaştığınız zorlukları ve çözüm yaklaşımınızı buraya ekleyin.
-
-</details>
-
----
-
-## 📚 References
-
-- Khanam, R., & Hussain, M. *YOLOv11: An Overview of the Key Architectural Enhancements*, 2024.
-- Zhang, Y. et al. *ByteTrack: Multi-Object Tracking by Associating Every Detection Box*, 2022.
-- [Ultralytics YOLO11 Documentation](https://docs.ultralytics.com/models/yolo11/)
-- [Roboflow Universe — Drones Yolo11 A Dataset](https://universe.roboflow.com/drone-a7lpy/drones-yolo11-a)
-
----
-
-## 📄 License
-
-Bu proje [MIT Lisansı](LICENSE) altında yayınlanmıştır.
-
----
-
-<div align="center">
-
-**`PLACEHOLDER — Adınız / GitHub / LinkedIn`**
-
-⭐ Projeyi faydalı bulduysanız yıldız vermeyi unutmayın!
-
-</div>
