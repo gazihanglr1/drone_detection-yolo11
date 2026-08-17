@@ -1,4 +1,22 @@
+<div align="center">
 
+# DroneWatch
+
+### Real-Time UAV Detection & Multi-Object Tracking with YOLO11x
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![YOLO11](https://img.shields.io/badge/Model-YOLO11x-00FFFF.svg)](https://docs.ultralytics.com/models/yolo11/)
+[![Tracker](https://img.shields.io/badge/Tracker-ByteTrack-orange.svg)](https://arxiv.org/abs/2110.06864)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Colab](https://img.shields.io/badge/Run%20on-Google%20Colab-F9AB00.svg)](https://colab.research.google.com/)
+
+<br>
+
+<img src="assets/sample_detection.png" alt="Sample Detection" width="720"/>
+
+</div>
+
+---
 
 ## 1. Project Overview
 
