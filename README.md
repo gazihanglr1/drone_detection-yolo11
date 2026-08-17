@@ -40,7 +40,7 @@
 | Tespit + Takip | Yoğunluk Haritası |
 |:---:|:---:|
 | <img src="assets/tracking_demo.gif" width="380"/> | <img src="assets/heatmap_output.png" width="380"/> |
-| *PLACEHOLDER — takip GIF'i* | *PLACEHOLDER — heatmap çıktısı* |
+
 
 </div>
 
@@ -56,7 +56,7 @@ Model, doğrulama setinde aşağıdaki metriklerle değerlendirilmiştir:
 | **Recall** | `91` |
 | **mAP@50** | `90` |
 | **mAP@50-95** | `71` |
-| **Inference Hızı** | `16` ms/görüntü |
+| **Inference Hızı** | `14` ms/görüntü |
 | **Model Boyutu** | `45` MB |
 
 <div align="center">
@@ -111,11 +111,6 @@ cd dronewatch-yolo11
 pip install -r requirements.txt
 ```
 
-### Usage
-
-**1. Google Colab üzerinden (önerilen):**
-`drone_watch.ipynb` dosyasını [Google Colab](https://colab.research.google.com/)'da açın ve hücreleri sırayla çalıştırın.
-
 **2. Yerel ortamda:**
 ```python
 from ultralytics import YOLO
@@ -136,26 +131,13 @@ results = model.track(
 
 ```
 dronewatch-yolo11/
-├── drone_watch.ipynb        # Ana notebook (eğitim + inference pipeline)
-├── PROJECT_REPORT.md         # Detaylı teknik dokümantasyon
-├── requirements.txt          # Bağımlılıklar
-├── LICENSE                   # MIT
+├── drone_watch.ipynb    
+├── PROJECT_REPORT.md        
+├── requirements.txt          
+├── LICENSE                  
 ├── .gitignore
-└── assets/                   # Görseller ve demo çıktıları
+└── assets/               
 ```
-
----
-
-## 🛣️ Roadmap
-
-- [ ] Daha geniş/çeşitli veri seti ile yeniden eğitim
-- [ ] `yolo11s` / `yolo11m` model karşılaştırması
-- [ ] Gerçek zamanlı webcam / RTSP stream desteği
-- [ ] Streamlit tabanlı web arayüzü
-- [ ] Docker containerization
-- [ ] ONNX / TensorRT export ile hızlandırma
-
----
 
 ## 🧠 Technical Approach
 
