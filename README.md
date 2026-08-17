@@ -2,10 +2,10 @@
 
 # DroneWatch
 
-### Real-Time UAV Detection & Multi-Object Tracking with YOLO11
+### Real-Time UAV Detection & Multi-Object Tracking with YOLO11x
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![YOLO11](https://img.shields.io/badge/Model-YOLO11-00FFFF.svg)](https://docs.ultralytics.com/models/yolo11/)
+[![YOLO11](https://img.shields.io/badge/Model-YOLO11x-00FFFF.svg)](https://docs.ultralytics.com/models/yolo11/)
 [![Tracker](https://img.shields.io/badge/Tracker-ByteTrack-orange.svg)](https://arxiv.org/abs/2110.06864)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Colab](https://img.shields.io/badge/Run%20on-Google%20Colab-F9AB00.svg)](https://colab.research.google.com/)
@@ -20,10 +20,10 @@
 
 ## Overview
 
-DroneWatch, video akışlarında drone/İHA tespiti ve çoklu nesne takibi yapan uçtan uca bir bilgisayarlı görü sistemidir. YOLO11 mimarisi üzerine özel eğitilmiş bir model ile ByteTrack algoritmasını birleştirerek, hızlı ve küçük hedefleri kareler arasında tutarlı bir şekilde takip eder. Sistem ayrıca zaman içindeki tespit yoğunluğunu görselleştiren bir ısı haritası (heatmap) modülü içerir.
+DroneWatch, video akışlarında drone/İHA tespiti ve çoklu nesne takibi yapan uçtan uca bir bilgisayarlı görü sistemidir. YOLO11x (Extra Large) mimarisi üzerine özel eğitilmiş model ile ByteTrack algoritmasını birleştirerek, hızlı ve küçük hedefleri kareler arasında tutarlı bir şekilde takip eder. Sistem ayrıca zaman içindeki tespit yoğunluğunu görselleştiren bir ısı haritası (heatmap) modülü içerir.
 
 Temel yetenekler:
-- Özel eğitilmiş YOLO11 tabanlı drone tespiti
+- Özel eğitilmiş YOLO11x tabanlı drone tespiti
 - ByteTrack ile karesel kimlik takibi (ID tutarlılığı)
 - Tespit yoğunluğu ısı haritası
 - Gerçek zamanlı çıkarım (inference) performansı
@@ -77,7 +77,7 @@ Model, doğrulama setinde aşağıdaki metriklerle değerlendirilmiştir:
 ## Model Configuration
 
 ```yaml
-model: yolo11s.pt
+model: yolo11x.pt
 epochs: 50
 imgsz: 640
 batch: 16
