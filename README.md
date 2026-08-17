@@ -52,12 +52,12 @@ Model, doğrulama setinde aşağıdaki metriklerle değerlendirilmiştir:
 
 | Metrik | Değer |
 |---|---|
-| **Precision** | `PLACEHOLDER` |
-| **Recall** | `PLACEHOLDER` |
-| **mAP@50** | `PLACEHOLDER` |
-| **mAP@50-95** | `PLACEHOLDER` |
-| **Inference Hızı** | `PLACEHOLDER` ms/görüntü |
-| **Model Boyutu** | `PLACEHOLDER` MB |
+| **Precision** | `90` |
+| **Recall** | `91` |
+| **mAP@50** | `90` |
+| **mAP@50-95** | `71` |
+| **Inference Hızı** | `16` ms/görüntü |
+| **Model Boyutu** | `45` MB |
 
 <div align="center">
 <img src="assets/results.png" alt="Training Results" width="700"/>
