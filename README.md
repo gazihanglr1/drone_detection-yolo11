@@ -21,12 +21,9 @@ pip install ultralytics roboflow opencv-python
 3. Hücreleri sırayla çalıştırın
 
 ## Sonuçlar
-*(Eğitim tamamlandıktan sonra kendi mAP, precision, recall değerlerinizi buraya ekleyin)*
 
-## Yol Haritası
-- [ ] Daha geniş veri seti ile yeniden eğitim
-- [ ] Gerçek zamanlı webcam desteği
-- [ ] Basit web arayüzü (Streamlit)
+
+
 
 ## Lisans
 MIT
